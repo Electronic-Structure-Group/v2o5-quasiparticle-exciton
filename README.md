@@ -1,33 +1,46 @@
-# V2O5 Quasiparticle and Excitonic Research
+# Quasiparticle Band Structure and Excitonic Optical Response in V2O5 Bulk and Monolayer
 
-This repository contains data and supporting files for the research paper "Quasiparticle band structure and excitonic optical response in V2O5 bulk and monolayer" by Claudio Garcia, Santosh Kumar Radha, Swagata Acharya, and Walter R. L. Lambrecht.  [arXiv link to the paper]
+This GitHub repository hosts the data files and related information for the research paper titled "Quasiparticle band structure and excitonic optical response in V2O5 bulk and monolayer," authored by Claudio Garcia, Santosh Kumar Radha, Swagata Acharya, and Walter R. L. Lambrecht, available on arXiv.
 
-**Repository Structure**
+## Repository Structure
 
-* **agr:** Contains .agr files for visualization with xmgrace (https://plasma-gate.weizmann.ac.il/Grace/). Correlates to figures 3, 4, 7, 8, and 9 in the paper.
-* **vesta:** Contains .vesta files for visualization with VESTA (https://jp-minerals.org/vesta/en/). Supports Fig. 5, offering interactive 3D exploration of the structure and exciton wavefunction data.
-* **bnds-blk/bnds-mono:** Ascii files containing band structure data (number of bands, Fermi level, k-point labels, energy eigenvalues) for figures 2 and 6. Includes DFT GGA-PBE, QSGW-RPA, and QSGW (with ladder diagrams) calculations. See https://www.questaal.org/docs/input/data_format/#bnds-file for format details and https://www.questaal.org/docs/misc/plbnds/ for visualization.
-* **bnds-k:** Contains exciton band weight data (Fig. 5 a-c) in .h5 format. Refer to https://www.questaal.org/docs/code/userguide/ for details on usage.
-* **ctrl.v2o5** and **site.v2o5:**  Input files for generating all data.
-* **.rst**, **.syml**, **.sigm:** Restart and self-energy files for rapid regeneration of results.
+The repository is structured to provide easy access to the data files used in the figures of the paper. Below is a guide to the contents and organization:
 
-**Using the Data**
+### 1. Grace Files (Folder: `agr`)
+- **Description**: Contains `.agr` files for use with [XMGRACE](https://plasma-gate.weizmann.ac.il/Grace/).
+- **Figures Covered**: 3, 4, 7, 8, 9.
+- **Contents**: Datasets corresponding to the mentioned figures.
 
-1. **Visualization:** 
-   * Use xmgrace with provided .agr files
-   * Employ VESTA with .vesta files for 3D structural and exciton wavefunction exploration.
+### 2. VESTA Files (Folder: `vesta`)
+- **Description**: Includes `.vesta` files for visualization with [VESTA](https://jp-minerals.org/vesta/en/).
+- **Figure Covered**: 5.
+- **Features**: Enables users to explore the structure and exciton wavefunction data from various angles and adjust isosurface values for exciton distributions.
 
-2. **Band Structure Analysis:**
-   * Load ascii files in data analysis software of your choice. See provided links for format and visualization guidance.
+### 3. Band Structure Data (Folders: `bnds-blk` and `bnds-mono`)
+- **Description**: Contains ASCII files with band structure data relevant to figures 2 and 6.
+- **Data Format**: Information on the number of bands, Fermi level, k-point labels, and energy eigenvalues. Details at [Questaal Data Format](https://www.questaal.org/docs/input/data_format/#bnds-file).
 
-3. **Exciton Band Weights:**
-   * Use the instructions at https://www.questaal.org/docs/code/userguide/ to integrate weights over energy windows and enhance band plots.
+```line 1: number of bands, Fermi level, k-point labels
+line 2: number of points long first line
+line 3: k-point coordinates in units 2pi/a  with a the lattice constant
+lines 4 -40: energy eigenvalues  in Rydberg
+line 5: next k-point followed by bands etc.
+until end of line.
+```
 
-**Reproducibility**
+- **Visualization**: Data can be visualized using [Questaal's plbnds tool](https://www.questaal.org/docs/misc/plbnds/).
+- **Files Included**: `bnds.gga`, `bnds.ldr`, `bnds.rpa` (representing different computational approximations).
 
-The provided input files, restart data, and self-energy files allow for the quick and complete regeneration of the presented results.
+### 4. Exciton Band Weights (Folder: `bnds-k`)
+- **Description**: Features data in `.h5` format for fig. 5 a-c.
+- **Usage**: After performing an optics calculation, exciton band weights can be integrated using a specific command line argument (detailed usage instructions can be found in the [Questaal User Guide](https://www.questaal.org/docs/code/userguide/)).
 
-**Contact and Collaboration**
+### 5. Meta Data
+- **Description**: Provides the fundamental input files (`ctrl.v2o5` and `site.v2o5`) needed to generate all the dataset, alongside `.rst`, `syml`, and `sigm` files for the self-consistent potential restart data and the self-energy files.
+- **Organization**: Data is arranged in subfolders for the bulk and various `c` values, facilitating quick regeneration of the results.
 
-* For questions or feedback on the data or research, please contact the authors via walter.lambrecht@case.edu. 
-* We welcome collaborations and contributions to further this research.
+## Additional Information
+
+For more details on the paper and the corresponding research findings, please refer to the [arXiv publication](#).
+
+This repository aims to support the reproducibility of our research by providing comprehensive datasets and tools necessary for analysis. We encourage the use of these resources in academic and research settings.
