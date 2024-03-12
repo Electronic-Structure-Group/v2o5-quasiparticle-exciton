@@ -7,7 +7,7 @@ This GitHub repository hosts the data files and related information for the rese
 The repository is structured to provide easy access to the data files used in the figures of the paper. Below is a guide to the contents and organization:
 
 ### 1. Grace Files (Folder: `agr`)
-- **Description**: Contains `.agr` and eps-plot.txt column struvtured data files for use with [XMGRACE](https://plasma-gate.weizmann.ac.il/Grace/).
+- **Description**: Contains `.agr` and eps-plot.txt column structured data files for use with [XMGRACE](https://plasma-gate.weizmann.ac.il/Grace/).
 - **Figures Covered**: 3, 4, 7, 8, 9.
 - **Contents**: Datasets corresponding to the mentioned figures.
 
