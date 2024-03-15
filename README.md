@@ -12,8 +12,8 @@ The repository is structured to provide easy access to the data files used in th
 - **Contents**: Datasets corresponding to the mentioned figures.
 
 ### 2. VESTA Files (Folder: `vesta`)
-- **Description**: Includes `.vesta` and .xsf files for visualization with [VESTA](https://jp-minerals.org/vesta/en/).
-- **Figure Covered**: 5.
+- **Description**: Includes `.vesta` and zip compressed .xsf files for visualization with [VESTA](https://jp-minerals.org/vesta/en/).
+- **Figure Covered**: 5, 10 
 - **Features**: Enables users to explore the structure and exciton wavefunction data from various angles and adjust isosurface values for exciton distributions.
 
 ### 3. Band Structure Data (Folders: `bnds-blk` and `bnds-mono`)
